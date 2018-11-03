@@ -29,7 +29,7 @@ public class TextDisplay : MonoBehaviour
         {
             image.SetActive(true);
         }
-        if (toDestroy && Input.GetMouseButtonUp(0))
+        if (toDestroy && Input.GetMouseButtonDown(0))
         {
             Destroy(transform.parent.gameObject);
         }
@@ -62,10 +62,7 @@ public class TextDisplay : MonoBehaviour
             {
                 choiceBox.SetActive(true);
             }
-            else
-            {
-                toDestroy = true;
-            }
+            toDestroy = true;
         }
     }
 }
