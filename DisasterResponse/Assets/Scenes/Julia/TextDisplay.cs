@@ -41,6 +41,7 @@ public class TextDisplay : MonoBehaviour
         StartCoroutine(animateText(displayTexts[index]));
     }
 
+
     IEnumerator animateText(string displayText)
     {
         image.SetActive(false);

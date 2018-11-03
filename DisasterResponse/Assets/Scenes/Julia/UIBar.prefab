@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224279744872742664}
   - component: {fileID: 222289954044265164}
   - component: {fileID: 114962668049022032}
-  - component: {fileID: 114935307292386094}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -82,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1808133634782486
 GameObject:
   m_ObjectHideFlags: 1
@@ -192,8 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayTexts:
-  - This is a sample text. I am just using it to ckec.
-  - Hope it works!
+  - You clicked the on button
   choiceBox: {fileID: 0}
   image: {fileID: 1685941306444298}
 --- !u!114 &114296665849520870
@@ -335,22 +333,6 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
---- !u!114 &114935307292386094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514689305256532}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ba476a8d2374e4ab9d33f134ce00c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayTexts:
-  - This is a sample text. I am just using it to ckec.
-  - Hope it works!
-  choiceBox: {fileID: 0}
-  image: {fileID: 1685941306444298}
 --- !u!114 &114962668049022032
 MonoBehaviour:
   m_ObjectHideFlags: 1
