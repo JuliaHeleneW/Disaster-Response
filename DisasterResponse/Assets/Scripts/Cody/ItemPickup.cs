@@ -12,7 +12,7 @@ public class ItemPickup : MonoBehaviour {
     {
 
         Debug.Log("Picking up " + item.name);
-        bool wasPickedUp = Inventory.instance.Add(item);
+        bool wasPickedUp = Inventory.instance.Add(this.item);
         if (wasPickedUp)
         {
             //remove from interactable object
@@ -26,7 +26,7 @@ public class ItemPickup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(2))
         {
             PickUp();
         }

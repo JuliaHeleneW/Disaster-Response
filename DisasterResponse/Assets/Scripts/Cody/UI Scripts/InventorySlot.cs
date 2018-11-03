@@ -32,4 +32,9 @@ public class InventorySlot : MonoBehaviour {
     {
         Inventory.instance.Remove(item);
     }
+
+    public void UseItem()
+    {
+        Inventory.instance.Remove(item);
+    }
 }

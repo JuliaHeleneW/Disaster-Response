@@ -220,7 +220,7 @@ Prefab:
     - target: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
         type: 2}
@@ -554,9 +554,9 @@ RectTransform:
   - {fileID: 308152499}
   - {fileID: 1598984424}
   - {fileID: 1050701505}
+  - {fileID: 560094134}
   - {fileID: 1300126665}
   - {fileID: 479705142}
-  - {fileID: 560094134}
   m_Father: {fileID: 544479608}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -671,16 +671,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114864662404063408, guid: 59bc227fddebdae4687e9680bb6490c9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114015538696405704, guid: 59bc227fddebdae4687e9680bb6490c9,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59bc227fddebdae4687e9680bb6490c9, type: 2}
@@ -1667,7 +1657,7 @@ Prefab:
     - target: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
         type: 2}
@@ -2001,6 +1991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 285833828}
+  inventoryUI: {fileID: 1312369735}
 --- !u!1 &1383729561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2003,7 @@ GameObject:
   - component: {fileID: 1383729562}
   - component: {fileID: 1383729564}
   - component: {fileID: 1383729563}
+  - component: {fileID: 1383729565}
   m_Layer: 0
   m_Name: bagUI
   m_TagString: Untagged
@@ -2073,6 +2065,58 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383729561}
+--- !u!114 &1383729565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1383729561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1383729563}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1312369740}
+        m_MethodName: OnBagButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1446998142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2125,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1446998143}
+  - component: {fileID: 1446998144}
+  - component: {fileID: 1446998145}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2101,6 +2147,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1446998144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446998142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ca3338f408b2d48a67fc489949c1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 0075450e8b8512c41b3d431b31b84fd0, type: 2}
+--- !u!114 &1446998145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446998142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60f0c20d6e16e74ab8044857f804e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: 9
+  items: []
 --- !u!224 &1598984424 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
@@ -2151,7 +2222,7 @@ Prefab:
     - target: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224646404694644404, guid: 59bc227fddebdae4687e9680bb6490c9,
         type: 2}
