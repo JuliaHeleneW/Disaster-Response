@@ -2,30 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextDisplay : MonoBehaviour {
+public class TextDisplay : MonoBehaviour
+{
 
     public string[] displayTexts;
+    public GameObject choiceBox;
     private int index;
     private UnityEngine.UI.Text screenText;
     public GameObject image;
     bool textToBeDisplayedLeft;
+    bool toDestroy;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         screenText = GetComponentInChildren<UnityEngine.UI.Text>();
         index = 0;
-        //if (displayTexts.Length > 1)
-        //{
-        //    image.SetActive(true);
-        //}
         StartCoroutine(animateText(displayTexts[index]));
         textToBeDisplayedLeft = false;
+        toDestroy = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (textToBeDisplayedLeft)
         {
             image.SetActive(true);
+        }
+        if (toDestroy && Input.GetMouseButtonUp(0))
+        {
+            Destroy(transform.parent.gameObject);
         }
     }
 
@@ -40,7 +46,7 @@ public class TextDisplay : MonoBehaviour {
         image.SetActive(false);
         string onScreen = "";
         textToBeDisplayedLeft = false;
-        for(int i = 0; i < displayText.Length; i++)
+        for (int i = 0; i < displayText.Length; i++)
         {
             onScreen += displayText[i];
             screenText.text = onScreen;
@@ -49,6 +55,17 @@ public class TextDisplay : MonoBehaviour {
         if (!(index == displayTexts.Length - 1))
         {
             image.SetActive(true);
+        }
+        else
+        {
+            if (choiceBox != null)
+            {
+                choiceBox.SetActive(true);
+            }
+            else
+            {
+                toDestroy = true;
+            }
         }
     }
 }

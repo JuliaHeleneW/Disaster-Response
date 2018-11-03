@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 223979973724311730}
   - component: {fileID: 114296665849520870}
   - component: {fileID: 114436666885867628}
+  - component: {fileID: 114142330733739082}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -58,13 +59,15 @@ GameObject:
   - component: {fileID: 114815844626964684}
   - component: {fileID: 212327549144879804}
   - component: {fileID: 114490686272267864}
+  - component: {fileID: 61882334475012660}
+  - component: {fileID: 60181760281795180}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1713274892716900
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,13 +120,82 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713274892716900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 798.71924, y: 373.1289, z: -5.7023973}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 785.39, y: 372.55, z: -3.6869}
+  m_LocalScale: {x: 0.64655757, y: 0.6465577, z: 0.6465577}
   m_Children:
   - {fileID: 224010944529027738}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60181760281795180
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685941306444298}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.5, y: 0.5}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: 0.5}
+--- !u!61 &61882334475012660
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685941306444298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &114142330733739082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620432358625822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ba476a8d2374e4ab9d33f134ce00c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayTexts:
+  - This is a sample text. I am just using it to ckec.
+  - Hope it works!
+  choiceBox: {fileID: 0}
+  image: {fileID: 1685941306444298}
 --- !u!114 &114296665849520870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,8 +277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a sample text. I am just trying to create a text that fits the
-    size of its content. '
+  m_Text: 
 --- !u!114 &114815844626964684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,13 +341,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514689305256532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41ba476a8d2374e4ab9d33f134ce00c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: This is a sample text. I am just trying to create something that is
-    out of bounds. Hope it works!
+  displayTexts:
+  - This is a sample text. I am just using it to ckec.
+  - Hope it works!
+  choiceBox: {fileID: 0}
   image: {fileID: 1685941306444298}
 --- !u!114 &114962668049022032
 MonoBehaviour:
@@ -389,7 +462,7 @@ RectTransform:
   m_GameObject: {fileID: 1620432358625822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5.7023973}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5460385, y: 1.5460384, z: 1.5460384}
   m_Children:
   - {fileID: 224279744872742664}
   - {fileID: 4972335725656382}
@@ -398,7 +471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -37.71924, y: -1.6289062}
+  m_AnchoredPosition: {x: -37.71924, y: -1.6289556}
   m_SizeDelta: {x: 1522, y: 743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224279744872742664
