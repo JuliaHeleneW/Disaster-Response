@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1808133634782486
 GameObject:
   m_ObjectHideFlags: 1
@@ -106,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685941306444298}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 640, y: -255, z: 554.3}
+  m_LocalPosition: {x: 673, y: 213, z: 554.3}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 224010944529027738}
@@ -191,7 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayTexts:
-  - You clicked the on button
+  - This is a sample text. I am just using it to check its functionality.
+  - Hope it works!
   choiceBox: {fileID: 0}
   image: {fileID: 1685941306444298}
 --- !u!114 &114296665849520870
@@ -264,7 +265,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3c2172383277d46b697de74b6df875e5, type: 3}
-    m_FontSize: 64
+    m_FontSize: 58
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -275,7 +276,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: This is a sample text. I am just using it to check its functionality. This
+    is an important step right now.
 --- !u!114 &114815844626964684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -472,8 +474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.0003595, y: -146.00017}
-  m_SizeDelta: {x: 1472.7, y: 327}
+  m_AnchoredPosition: {x: -9.2, y: 268}
+  m_SizeDelta: {x: 1462.2, y: 180.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224312440265526562
 RectTransform:
@@ -490,6 +492,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.3, y: 32.25}
-  m_SizeDelta: {x: 1364.6, y: 191.5}
+  m_AnchoredPosition: {x: -32.4, y: 2.4}
+  m_SizeDelta: {x: 1348.2, y: 146.7}
   m_Pivot: {x: 0.5, y: 0.5}
