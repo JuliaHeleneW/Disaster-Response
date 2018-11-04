@@ -6,9 +6,24 @@ using UnityEngine.UI;
 public class stamina : fillBar
 {
 
-    private int staminaAmt = 50;
-    private int maxStaminaAmt = 50;
+    private int staminaAmt;
+    private int maxStaminaAmt;
     private bool changeStamina;
+
+    public stamina(int maxStamina)
+    {
+        if (maxStamina <= 0)
+        {
+            Debug.LogWarning("Negative input, setting stamina to 100");
+            maxStaminaAmt = 100;
+        }
+        else
+        {
+            maxStaminaAmt = maxStamina;
+        }
+        staminaAmt = maxStaminaAmt;
+        this.setBarRect(GameObject.Find("yellowStaminaBar").GetComponent<RectTransform>());
+    }
 
     //[SerializeField]
     //private Text staminaText;
@@ -21,10 +36,14 @@ public class stamina : fillBar
     }
 
     // Update is called once per frame
-    void Update()
+    public void checkStamina()
     {
         if (changeStamina)
         {
+            if(staminaAmt <= 0)
+            {
+                staminaAmt = 0;
+            }
             setFillBar(staminaAmt, maxStaminaAmt);
             changeStamina = false;
         }

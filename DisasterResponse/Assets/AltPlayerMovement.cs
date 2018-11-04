@@ -5,6 +5,17 @@ using UnityEngine;
 public class AltPlayerMovement : MonoBehaviour {
     public Sprite[] sprite_list;
 
+    //declaring status variables
+    [SerializeField]
+    private int healthAmt;
+    [SerializeField]
+    private int staminaAmt;
+    private health playerHealth;
+    private stamina playerStamina;
+    private int firesNearby;
+    private float timeTrack;
+
+    //declaring movement variables
     private float speed;
     private bool moveLeft;
     private bool moveRight;
@@ -16,6 +27,13 @@ public class AltPlayerMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //initializing status variables
+        playerHealth = new health(healthAmt);
+        playerStamina = new stamina(staminaAmt);
+        firesNearby = 0;
+        timeTrack = 0;
+
+        //initializing movement variables
         moveLeft = false;
         moveRight = false;
         moveUp = false;
@@ -26,9 +44,59 @@ public class AltPlayerMovement : MonoBehaviour {
         sprite_render = GetComponent<SpriteRenderer>();
 	}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "fire")
+        {
+            firesNearby += 1;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "fire")
+        {
+            firesNearby -= 1;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "fire")
+        {
+            playerHealth.takeDamage(1);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "fire")
+        {
+            playerHealth.takeDamage(1);
+        }
+    }
+
     // Update is called once per frame
     void Update () {
+        timeTrack += Time.deltaTime;
         PlayerMovement();
+        if(firesNearby > 0)
+        {
+            playerStamina.useStamina((int)(50f * firesNearby * timeTrack));
+        }
+        else
+        {
+            Debug.Log(35 * timeTrack);
+            playerStamina.recoverStamina((int) (100*timeTrack));
+        }
+        updateStatus();
+        timeTrack = 0f;
+    }
+
+    private void updateStatus()
+    {
+        playerHealth.checkHealth();
+        playerStamina.checkStamina();
     }
 
     private void PlayerMovement()

@@ -1,19 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class health : fillBar {
 
-    private int healthAmt = 50;
-    private int maxHealthAmt = 50;
+    private int healthAmt;
+    private int maxHealthAmt;
     private bool changeHealth;
+
+    public health(int maxHealth)
+    {
+        if (maxHealth <= 0)
+        {
+            Debug.LogWarning("Negative input, setting health to 100");
+            maxHealthAmt = 100;
+        }
+        else
+        {
+            maxHealthAmt = maxHealth;
+        }
+        healthAmt = maxHealthAmt;
+        this.setBarRect(GameObject.Find("greenHealthBar").GetComponent<RectTransform>());
+    }
 
     //[SerializeField]
     //private Text healthText;
 
     // Use this for initialization
-
 
     void Start()
     {
@@ -26,7 +41,7 @@ public class health : fillBar {
 
 
     // Update is called once per frame
-    void Update () {
+    public void checkHealth () {
         if (changeHealth){
             setFillBar(healthAmt, maxHealthAmt);
             changeHealth = false;
@@ -40,7 +55,7 @@ public class health : fillBar {
         healthAmt = healthAmt - damage;
         if(healthAmt <= 0)
         {
-            //Todo: Call gameOver method here
+            SceneManager.LoadScene("Game Over");
         }
         else
         {

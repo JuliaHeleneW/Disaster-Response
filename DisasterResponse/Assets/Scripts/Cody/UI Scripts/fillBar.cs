@@ -15,17 +15,23 @@ public class fillBar : MonoBehaviour
         {
             Debug.LogError("STATUS INDICATOR: No health bar referenced.");
         }
+        Debug.Log("barRect: " + barRect);
         //if (healthText == null)
         //{
         //    Debug.LogError("STATUS INDICATOR: No health bar referenced.");
         //}
     }
 
-    public void setFillBar(int current, int max)
+    public void setBarRect(RectTransform other)
     {
-        float value = (float)current / max;
+        barRect = other;
+    }
 
-        barRect.localScale = new Vector3(value, 1f, 1f);
+    public void setFillBar(float current, float max)
+    {
+        float value = current / max;
+
+        barRect.localScale = (new Vector3(value, 1f, 1f));
         //healthText.text = "Health: " + currHealth + "/" + maxHealth;
     }
 
