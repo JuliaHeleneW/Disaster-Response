@@ -5,24 +5,14 @@ using UnityEngine;
 public class AltPlayerMovement : MonoBehaviour {
     public Sprite[] sprite_list;
 
-    private float speed = 0.1f;
-    private bool animate_bool;
-    private bool moveLeft;
-    private bool moveRight;
-    private bool moveUp;
-    private bool moveDown;
+    private float speed;
     private Animator anim;
     private SpriteRenderer sprite_render;
-    private Vector2 position;
     private Camera cam;
-    private Vector2 move;
-    private GameObject player;
-    private bool collided = false;
-    //public Transform target;
+
     // Use this for initialization
     void Start () {
-        animate_bool = false;
-        //move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        speed = 0.1f;
         cam = Camera.main;
         anim = GetComponent<Animator>();
         sprite_render = GetComponent<SpriteRenderer>();
@@ -30,72 +20,58 @@ public class AltPlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (animate_bool)
-        {
-            AnimateCharacter();
-        }
+        PlayerMovement();
+    }
+
+    private void PlayerMovement()
+    {
+        // walking, enable animator, move player, and play animation
         if (Input.GetKey(KeyCode.A))
         {
+            anim.enabled = true;
             transform.Translate(Vector2.left * speed);
-            animate_bool = true;
-
+            anim.Play("move_left");
         }
         if (Input.GetKey(KeyCode.D))
         {
+            anim.enabled = true;
             transform.Translate(Vector2.right * speed);
-            animate_bool = true;
-
+            anim.Play("move_right");
         }
         if (Input.GetKey(KeyCode.S))
         {
+            anim.enabled = true;
             transform.Translate(Vector2.down * speed);
-            animate_bool = true;
+            anim.Play("move_down");
         }
         if (Input.GetKey(KeyCode.W))
         {
+            anim.enabled = true;
             transform.Translate(Vector2.up * speed);
-            animate_bool = true;
-
+            anim.Play("move_up");
         }
 
-    }
 
-    /// <summary>
-    /// AnimateCharacter method, Determines animations.
-    /// </summary>
-    private void AnimateCharacter()
-    {
-        ResetAnimations();
-        if (moveLeft)
+        // When key is up, disable animator, and set the sprite for the spefic image
+        if (Input.GetKeyUp(KeyCode.A))
         {
-            anim.SetBool("moveLeft", true);
+            anim.enabled = false;
             sprite_render.sprite = sprite_list[3];
         }
-        if (moveRight)
+        if (Input.GetKeyUp(KeyCode.D))
         {
-            anim.SetBool("moveRight", true);
+            anim.enabled = false;
             sprite_render.sprite = sprite_list[1];
         }
-        if (moveDown)
+        if (Input.GetKeyUp(KeyCode.S))
         {
-            anim.SetBool("moveDown", true);
+            anim.enabled = false;
             sprite_render.sprite = sprite_list[0];
         }
-        if (moveUp)
+        if (Input.GetKeyUp(KeyCode.W))
         {
-            anim.SetBool("moveUp", true);
+            anim.enabled = false;
             sprite_render.sprite = sprite_list[2];
         }
-    }
-
-    /// <summary>
-    /// ResetAnimation method, Resets all animations to false
-    /// </summary>
-    private void ResetAnimations()
-    {
-        anim.SetBool("moveLeft", false);
-        anim.SetBool("moveRight", false);
-        anim.SetBool("moveDown", false);
-        anim.SetBool("moveUp", false);
     }
 }
