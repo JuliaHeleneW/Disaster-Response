@@ -1728,7 +1728,10 @@ MonoBehaviour:
   displayTexts:
   - You pick up the key.
   choiceBox: {fileID: 0}
+  index: 0
   image: {fileID: 1193744447762660}
+  toDestroy: 0
+  coroutine_running: 0
 --- !u!114 &114331517610133158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1792,7 +1795,10 @@ MonoBehaviour:
   displayTexts:
   - You decide not to pick up the key.
   choiceBox: {fileID: 0}
+  index: 0
   image: {fileID: 1043710538387456}
+  toDestroy: 0
+  coroutine_running: 0
 --- !u!114 &114383584303332908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1922,7 +1928,10 @@ MonoBehaviour:
   - It's a bed. A simple, normal bed.
   - Wait! Did you just see a goblin hop under the sheets?
   choiceBox: {fileID: 1094873639974426}
+  index: 0
   image: {fileID: 1134846984007194}
+  toDestroy: 0
+  coroutine_running: 0
 --- !u!114 &114437195434710560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1937,7 +1946,10 @@ MonoBehaviour:
   displayTexts:
   - You search the bed, but don't find anything.
   choiceBox: {fileID: 0}
+  index: 0
   image: {fileID: 1253190991670158}
+  toDestroy: 0
+  coroutine_running: 0
 --- !u!114 &114448957086337014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2087,7 +2099,10 @@ MonoBehaviour:
   displayTexts:
   - You find a key.
   choiceBox: {fileID: 1833111257456858}
+  index: 0
   image: {fileID: 1814458680713348}
+  toDestroy: 0
+  coroutine_running: 0
 --- !u!114 &114542559404011196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2792,7 +2807,10 @@ MonoBehaviour:
   displayTexts:
   - You decide not to search the bed.
   choiceBox: {fileID: 0}
+  index: 0
   image: {fileID: 1907559491170298}
+  toDestroy: 0
+  coroutine_running: 0
 --- !u!114 &114863875157763806
 MonoBehaviour:
   m_ObjectHideFlags: 1
