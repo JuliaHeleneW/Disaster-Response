@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 95528711968579520}
   - component: {fileID: 61019157074656430}
   - component: {fileID: 114221064455786304}
-  - component: {fileID: 114958080845168962}
   m_Layer: 0
   m_Name: BlondeBoyPlayer
   m_TagString: Player
@@ -119,26 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite_list:
-  - {fileID: 21300002, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
-  - {fileID: 21300014, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
-  - {fileID: 21300020, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
-  - {fileID: 21300008, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
---- !u!114 &114958080845168962
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1892480885982220}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b940a8e8c15f04d9e5cc5b2e324481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite_list:
-  - {fileID: 21300002, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
-  - {fileID: 21300014, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
-  - {fileID: 21300020, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
-  - {fileID: 21300008, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
+  - {fileID: 21300002, guid: 8ad9ce6e035d61e44adb453659b13b6c, type: 3}
+  - {fileID: 21300014, guid: 8ad9ce6e035d61e44adb453659b13b6c, type: 3}
+  - {fileID: 21300020, guid: 8ad9ce6e035d61e44adb453659b13b6c, type: 3}
+  - {fileID: 21300008, guid: 8ad9ce6e035d61e44adb453659b13b6c, type: 3}
 --- !u!212 &212132647551573572
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -173,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 280ace8ff56615144b4467670e6370b5, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 8ad9ce6e035d61e44adb453659b13b6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
