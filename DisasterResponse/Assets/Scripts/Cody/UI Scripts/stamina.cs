@@ -62,11 +62,7 @@ public class stamina : fillBar
 
     public void recoverStamina(int recoveredAmt)
     {
-        if(staminaAmt == maxStaminaAmt)
-        {
-            Debug.Log("Stamina is full");
-        }
-        else if(staminaAmt + recoveredAmt > maxStaminaAmt)
+        if(staminaAmt + recoveredAmt > maxStaminaAmt)
         {
             staminaAmt = maxStaminaAmt;
             changeStamina = true;

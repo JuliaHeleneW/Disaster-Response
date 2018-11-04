@@ -86,7 +86,6 @@ public class AltPlayerMovement : MonoBehaviour {
         }
         else
         {
-            Debug.Log(35 * timeTrack);
             playerStamina.recoverStamina((int) (100*timeTrack));
         }
         updateStatus();

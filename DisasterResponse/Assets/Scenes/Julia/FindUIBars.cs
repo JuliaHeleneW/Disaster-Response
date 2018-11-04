@@ -8,7 +8,6 @@ public class FindUIBars : MonoBehaviour {
     // Use this for initialization
     void Start () {
         UIBars = GameObject.FindGameObjectsWithTag("UIBar");
-        Debug.Log("Size: " + UIBars.Length);
         foreach(GameObject bar in UIBars)
         {
             bar.SetActive(false);
