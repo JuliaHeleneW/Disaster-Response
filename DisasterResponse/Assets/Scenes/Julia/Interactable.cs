@@ -108,8 +108,9 @@ public class Interactable : MonoBehaviour {
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player"&&Input.GetKeyDown(KeyCode.Space)&&!(UIbarDescription.GetComponentInChildren<TextDisplay>().toDestroy))
         {
+            UIbarDescription.SetActive(true);
             startDialogue = true;
         }
     }

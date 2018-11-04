@@ -42,7 +42,7 @@ public class TextDisplay : MonoBehaviour
                 GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<HintBserver>().isObserverActive = true;
 
             }
-            if (this.gameObject.transform.tag == "Observer" && this.gameObject.activeSelf == true && toDestroy)
+            else if (this.gameObject.transform.tag == "Observer" && this.gameObject.activeSelf == true && toDestroy)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = true;
                 GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<HintBserver>().isObserverActive = true;
@@ -81,7 +81,7 @@ public class TextDisplay : MonoBehaviour
         {
             onScreen += displayText[i];
             screenText.text = onScreen;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.02f);
         }
         if (!(index == displayTexts.Length - 1))
         {
