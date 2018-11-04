@@ -7,8 +7,8 @@ public class TriangleClick : MonoBehaviour {
 
     private void Start()
     {
-        parentReference = transform.parent.GetComponent<TextDisplay>();
-        Debug.Log(transform.parent);
+        parentReference = transform.parent.GetChild(0).GetComponent<TextDisplay>();
+        Debug.Log(transform.parent.GetChild(0));
     }
     //private void OnMouseOver()
     //{

@@ -37,6 +37,7 @@ public class TextDisplay : MonoBehaviour
             if (this.gameObject.transform.tag == "Ending" && this.gameObject.activeSelf == true && toDestroy)
             {
                 transform.parent.parent.gameObject.GetComponent<FindUIBars>().ResetUI();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = true;
             }
         }
         if (!toDestroy&&this.gameObject.activeSelf && !coroutine_running)
@@ -81,6 +82,7 @@ public class TextDisplay : MonoBehaviour
         {
             if (choiceBox != null)
             {
+                yield return new WaitForSeconds(1f);
                 choiceBox.SetActive(true);
             }
             toDestroy = true;
