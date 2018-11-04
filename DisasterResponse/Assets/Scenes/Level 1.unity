@@ -177,6 +177,11 @@ Prefab:
       propertyPath: timerBox
       value: 
       objectReference: {fileID: 244017411}
+    - target: {fileID: 114755079748814664, guid: 66cdd20181a97534185398dadcb8afd3,
+        type: 2}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 529623634}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66cdd20181a97534185398dadcb8afd3, type: 2}
   m_IsPrefabParent: 0
@@ -288,6 +293,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1153803130}
+    - target: {fileID: 114716080072501436, guid: d9f31a1b08bf86548a0ca48e81c0ee37,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9f31a1b08bf86548a0ca48e81c0ee37, type: 2}
   m_IsPrefabParent: 0
@@ -333,6 +343,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7688073c22d9ca243a2a722222e1b2d8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &529623634 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114716080072501436, guid: d9f31a1b08bf86548a0ca48e81c0ee37,
+    type: 2}
+  m_PrefabInternal: {fileID: 268453397}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &649133502
 Prefab:
   m_ObjectHideFlags: 0
