@@ -7,11 +7,12 @@ public class TextDisplay : MonoBehaviour
 
     public string[] displayTexts;
     public GameObject choiceBox;
-    private int index;
+    public int index;
     private UnityEngine.UI.Text screenText;
     public GameObject image;
     bool textToBeDisplayedLeft;
-    bool toDestroy;
+    public bool toDestroy;
+    public bool coroutine_running;
     // Use this for initialization
     void Start()
     {
@@ -20,6 +21,7 @@ public class TextDisplay : MonoBehaviour
         StartCoroutine(animateText(displayTexts[index]));
         textToBeDisplayedLeft = false;
         toDestroy = false;
+        coroutine_running = false;
     }
 
     // Update is called once per frame
@@ -31,8 +33,25 @@ public class TextDisplay : MonoBehaviour
         }
         if (toDestroy && Input.GetMouseButtonDown(0))
         {
-            Destroy(transform.parent.gameObject);
+            transform.parent.gameObject.SetActive(false);
+            if (this.gameObject.transform.tag == "Ending" && this.gameObject.activeSelf == true && toDestroy)
+            {
+                transform.parent.parent.gameObject.GetComponent<FindUIBars>().ResetUI();
+            }
         }
+        if (!toDestroy&&this.gameObject.activeSelf && !coroutine_running)
+        {
+            StartCoroutine(animateText(displayTexts[index]));
+        }
+    }
+
+    public void onReactivate()
+    {
+        screenText = GetComponentInChildren<UnityEngine.UI.Text>();
+        index = 0;
+        //StartCoroutine(animateText(displayTexts[index]));
+        textToBeDisplayedLeft = false;
+        toDestroy = false;
     }
 
     public void nextText()
@@ -44,6 +63,7 @@ public class TextDisplay : MonoBehaviour
 
     IEnumerator animateText(string displayText)
     {
+        coroutine_running = true;
         image.SetActive(false);
         string onScreen = "";
         textToBeDisplayedLeft = false;
@@ -64,6 +84,8 @@ public class TextDisplay : MonoBehaviour
                 choiceBox.SetActive(true);
             }
             toDestroy = true;
+            index = 0;
+            coroutine_running = false;
         }
     }
 }

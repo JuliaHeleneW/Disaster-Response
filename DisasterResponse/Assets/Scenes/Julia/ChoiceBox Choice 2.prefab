@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 223248042256900422}
   - component: {fileID: 114631639778705424}
   - component: {fileID: 114201815842157342}
+  - component: {fileID: 114577477111927264}
   m_Layer: 0
   m_Name: ChoiceBox Choice 2
   m_TagString: Untagged
@@ -172,16 +173,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1101509747746446}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114577477111927264}
+        m_MethodName: toDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -228,6 +240,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114577477111927264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599455484153152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462f1d6e10962d143b64286e31369c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114614745433993656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +272,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3c2172383277d46b697de74b6df875e5, type: 3}
-    m_FontSize: 64
+    m_FontSize: 58
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -381,16 +404,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1140826157484070}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114577477111927264}
+        m_MethodName: toDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -525,8 +559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.9, y: 70.2}
-  m_SizeDelta: {x: 1276.5, y: 102.2}
+  m_AnchoredPosition: {x: -35.5, y: 4.1}
+  m_SizeDelta: {x: 1305.3, y: 155.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224220376013079566
 RectTransform:
@@ -546,8 +580,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: -148}
-  m_SizeDelta: {x: 1452.3, y: 313.6}
+  m_AnchoredPosition: {x: -19, y: 265.5}
+  m_SizeDelta: {x: 1452.3, y: 180.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224399720520960844
 RectTransform:
@@ -564,7 +598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -96.7, y: 0.5}
+  m_AnchoredPosition: {x: 33, y: 0.5}
   m_SizeDelta: {x: 473.9, y: 51.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224461663789429760
@@ -602,8 +636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 765.3, y: 375.8}
-  m_SizeDelta: {x: 1530.5, y: 751.6}
+  m_AnchoredPosition: {x: 765.3, y: 372.91525}
+  m_SizeDelta: {x: 1530.5, y: 745.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224879866193568282
 RectTransform:
@@ -639,6 +673,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 158.8, y: -27.1}
+  m_AnchoredPosition: {x: 42, y: -27.1}
   m_SizeDelta: {x: 317.5, y: 54.2}
   m_Pivot: {x: 0.5, y: 0.5}

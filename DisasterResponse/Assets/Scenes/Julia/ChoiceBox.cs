@@ -16,6 +16,6 @@ public class ChoiceBox : MonoBehaviour {
 
     public void toDestroy()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }
