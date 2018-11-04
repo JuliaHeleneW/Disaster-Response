@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public Canvas masterUI;
     static float timer;
     public Text timerBox;
+    public Button start;
 	// Use this for initialization
 	void Start () {
         masterUI.enabled = false;
@@ -38,7 +39,8 @@ public class GameManager : MonoBehaviour {
 
     public void removeInfoCanvas()
     {
-        Info.enabled = !Info.enabled;
+        start.enabled = false;
+        Info.enabled = false;
         masterUI.enabled = true;
         StartCountDown();
     }
