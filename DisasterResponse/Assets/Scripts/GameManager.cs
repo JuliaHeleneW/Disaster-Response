@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour {
    // public Text pauseInfo;
     public Canvas Info;
     public Canvas masterUI;
-    static float timer = 300.0f;
+    static float timer;
     public Text timerBox;
 	// Use this for initialization
 	void Start () {
         masterUI.enabled = false;
         pause.enabled = false;
-	}
+        timer = 300.0f;
+    }
 
     // Update is called once per frame
     void Update()
