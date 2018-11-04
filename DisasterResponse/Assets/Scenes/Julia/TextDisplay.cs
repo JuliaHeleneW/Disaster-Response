@@ -37,7 +37,16 @@ public class TextDisplay : MonoBehaviour
             if (this.gameObject.transform.tag == "Ending" && this.gameObject.activeSelf == true && toDestroy)
             {
                 transform.parent.parent.gameObject.GetComponent<FindUIBars>().ResetUI();
+                //GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = true;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = true;
+                GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<HintBserver>().isObserverActive = true;
+
+            }
+            if (this.gameObject.transform.tag == "Observer" && this.gameObject.activeSelf == true && toDestroy)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = true;
+                GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<HintBserver>().isObserverActive = true;
+
             }
         }
         if (!toDestroy&&this.gameObject.activeSelf && !coroutine_running)

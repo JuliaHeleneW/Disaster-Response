@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemInteractable : MonoBehaviour {
 
     public string[] interactItems;
     public GameObject itemDialog;
     public bool startDialogue;
-
+    public bool haveFlash;
     // Use this for initialization
     void Start () {
         startDialogue = false;
+        haveFlash = false;
     }
 	
 	// Update is called once per frame
@@ -20,14 +22,14 @@ public class ItemInteractable : MonoBehaviour {
         {
             Debug.Log("Worked");
         }
-        if ((startDialogue) && (Input.GetMouseButtonDown(1) )&&(itemDialog.GetComponentInChildren<TextDisplay>().toDestroy==false))
-        {
-            Debug.Log("Why not???");
-            GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = false;
-            startDialogue = false;
-            interact();
+        //if ((startDialogue) && (Input.GetMouseButtonDown(1) )&&(itemDialog.GetComponentInChildren<TextDisplay>().toDestroy==false))
+        //{
+        //    Debug.Log("Why not???");
+        //    GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = false;
+        //    startDialogue = false;
+        //    interact();
 
-        }
+        //}
     }
 
     public void interact()
@@ -37,16 +39,11 @@ public class ItemInteractable : MonoBehaviour {
         int itemCounter = 0;
         for (int i = 0; i < items.Count; i++)
         {
-            Debug.Log(items.Count);
-            for (int j = 0; j < interactItems.Length; j++)
-            {
-                Debug.Log(items[i].name);
-                Debug.Log(interactItems[j]);
-                if (items[i].name==interactItems[j])
+            
+                if (items[i].name=="Flashlight")
                 {
-                    itemCounter++;
+                    SceneManager.LoadScene("Victory");
                 }
-            }
         }
         Debug.Log(itemCounter);
         Debug.Log(interactItems.Length);
@@ -56,13 +53,25 @@ public class ItemInteractable : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.gameObject.transform.tag == "Player" /*&& Input.GetMouseButtonDown(1) && itemDialog.GetComponentInChildren<TextDisplay>().toDestroy == false*/)
         {
             Debug.Log("Why???");
+            interact();
+            Debug.Log("???");
             startDialogue = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = false;
+            startDialogue = false;
+            //interact();
         }
+        //if (startDialogue && Input.GetMouseButtonDown(1) && itemDialog.GetComponentInChildren<TextDisplay>().toDestroy == false)
+        //{
+        //    Debug.Log("Why not???");
+        //    GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = false;
+        //    startDialogue = false;
+        //    interact();
+        //}
         //if (Input.GetMouseButtonDown(0) && !(UIbarDescription.GetComponentInChildren<TextDisplay>().toDestroy))
         //{
         //    Debug.Log("Why???");

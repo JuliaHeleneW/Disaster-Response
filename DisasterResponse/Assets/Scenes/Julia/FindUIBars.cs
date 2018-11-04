@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class FindUIBars : MonoBehaviour {
 
-    public GameObject[] UIBars;
+    public List<GameObject> UIBars;
     // Use this for initialization
     void Start () {
-        UIBars = GameObject.FindGameObjectsWithTag("UIBar");
+        //UIBars = GameObject.FindGameObjectsWithTag("UIBar");
+        foreach (Transform child in transform) { 
+            if (child.CompareTag("UIBar"))
+            {
+                UIBars.Add(child.gameObject);
+            }
+        }
         foreach(GameObject bar in UIBars)
         {
             bar.SetActive(false);
         }
-	}
+}
 	
 	// Update is called once per frame
 	void Update () {

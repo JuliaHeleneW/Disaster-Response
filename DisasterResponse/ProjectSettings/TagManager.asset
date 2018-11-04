@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - fire
+  - Ending
+  - UIBar
+  - Observer
   layers:
   - Default
   - TransparentFX

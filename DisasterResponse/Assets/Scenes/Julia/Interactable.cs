@@ -11,6 +11,7 @@ public class Interactable : MonoBehaviour {
     public bool isActivated;
     public Item item;
     public bool startDialogue;
+    public int timer;
 
 
     //public string[] interactItems;
@@ -22,6 +23,7 @@ public class Interactable : MonoBehaviour {
         UIbarDescription.SetActive(false) ;
         isActivated = false;
         startDialogue = false;
+        timer = 0;
         //itemManager = GameObject.Find("itemManager");
     }
 
@@ -39,13 +41,14 @@ public class Interactable : MonoBehaviour {
         }
         if (startDialogue&& Input.GetKeyDown(KeyCode.Space) && !(UIbarDescription.GetComponentInChildren<TextDisplay>().toDestroy))
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<AltPlayerMovement>().enabled = false;
+            GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<HintBserver>().isObserverActive = false;
             isActivated = true;
             UIbarDescription.SetActive(true);
             isActivated = false;
             startDialogue = false;
             //interact();
- 
         }
     }
 
@@ -103,17 +106,11 @@ public class Interactable : MonoBehaviour {
     //    }
     //}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("Why???");
             startDialogue = true;
         }
-        //if (Input.GetMouseButtonDown(0) && !(UIbarDescription.GetComponentInChildren<TextDisplay>().toDestroy))
-        //{
-        //    Debug.Log("Why???");
-        //    startDialogue = true;
-        //}
     }
 }

@@ -895,7 +895,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'WASD - Movement
 
-    Right Mouse - Action Button
+    Left Mouse Click - Select Choices
+
+    Spacebar - Object Interactions
 
 '
 --- !u!222 &1699614332
