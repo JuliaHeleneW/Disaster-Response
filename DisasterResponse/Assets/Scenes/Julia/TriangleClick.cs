@@ -7,8 +7,17 @@ public class TriangleClick : MonoBehaviour {
 
     private void Start()
     {
-        parentReference = transform.parent.GetChild(0).GetComponent<TextDisplay>();
+        parentReference = transform.parent.parent.parent.GetComponent<TextDisplay>();
         Debug.Log(transform.parent.GetChild(0));
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey("mouse 0"))
+        {
+            Debug.Log("Box Clicked!");
+            parentReference.nextText();
+        }
     }
     //private void OnMouseOver()
     //{
@@ -18,7 +27,7 @@ public class TriangleClick : MonoBehaviour {
     //    }
     //}
 
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
         if (Input.GetKey("mouse 0"))
         {
