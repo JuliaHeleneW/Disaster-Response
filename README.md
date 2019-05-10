@@ -5,4 +5,4 @@ Creators:
 Matt Connolly,
 Cody Regalado,
 Eric Tinoco,
-Julia Werner,
+Julia Werner
