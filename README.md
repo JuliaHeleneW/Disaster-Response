@@ -2,7 +2,7 @@
 
 Creators:
 
-Matt Connolly
-Cody Regalado
-Eric Tinoco
-Julia Werner
+Matt Connolly,
+Cody Regalado,
+Eric Tinoco,
+Julia Werner,
